@@ -2,6 +2,8 @@ package org.lessons.java.spring_pizzeria_crud.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class Ingredient {
     private String name;
 
     @ManyToMany(mappedBy = "ingredients")
+    @JsonIgnore
     private List<Pizza> pizze;
 
     public Ingredient() {
